@@ -1,12 +1,14 @@
 <div id="ordertracker-widget"></div>
 <script src="https://www.ordertracker.com/sdk.js"></script>
 <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('r');
     Ordertracker({
         "id": "65d69079e69bd6068ab70dcc",
         /*
             If you want to load the tracking status directly instead of showing a tracking form
             Uncomment the next line & replace YOUR_TRACKING_NUMBER by a valid tracking number
         */
-        //"trackingNumber": "YOUR_TRACKING_NUMBER"
+        "trackingNumber": myParam
     }).render('#ordertracker-widget')
 </script>
